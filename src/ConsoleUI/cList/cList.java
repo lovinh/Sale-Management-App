@@ -145,6 +145,15 @@ public class cList<T>{
 	public void setItemList(List<T> itemList) {
 		this.itemList = itemList;
 	}
+	public void setItemList(T[] itemArray)
+	{
+		this.itemList.clear();
+		for (T it : itemArray)
+		{
+			this.itemList.add(it);
+			this.numberOfItem++;
+		}
+	}
 	public String getTitle() {
 		return title;
 	}

@@ -62,6 +62,13 @@ public class cOrderList<T> extends cList<T> implements ConsoleUI{
 		this.markerType = "num";
 		this.markerAfter = "dot";
 	}
+	
+
+	public cOrderList(List<T> itemList, String markerType, String markerAfter) {
+		super(itemList);
+		this.markerType = markerType;
+		this.markerAfter = markerAfter;
+	}
 
 	// Setting
 	public void setMarkerType(String markerType)

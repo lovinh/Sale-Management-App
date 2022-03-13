@@ -1,11 +1,12 @@
 package Workshop;
 import java.util.HashMap;
-
 import javax.naming.NameNotFoundException;
+
 public class Cart {
 	private HashMap<Drinks, Integer> itemCart;
 	private int itemQuantity;
 	private long totalCost;
+	private float sale;
 	
 	// Constructor
 	public Cart()
@@ -13,12 +14,14 @@ public class Cart {
 		this.itemCart = new HashMap<Drinks, Integer>();
 		this.itemQuantity = 0;
 		this.totalCost = 0;
+		this.sale = 0;
 	}
 	public Cart(HashMap<Drinks, Integer> itemCart, int itemQuantity, long totalCost) {
 		super();
 		this.itemCart = itemCart;
 		this.itemQuantity = itemQuantity;
 		this.totalCost = totalCost;
+		this.sale = 0;
 	}
 	public Cart(HashMap<Drinks, Integer> itemCart, long totalCost)
 	{
@@ -26,6 +29,7 @@ public class Cart {
 		this.itemCart = itemCart;
 		this.itemQuantity = itemCart.size();
 		this.totalCost = totalCost;
+		this.sale = 0;
 	}
 	public Cart(HashMap<Drinks, Integer> itemCart)
 	{
@@ -36,6 +40,7 @@ public class Cart {
 		{
 			this.totalCost += drk.getTotalPrice() * itemCart.get(drk);
 		}
+		this.sale = 0;
 	}
 	
 	// Getter and Setter
@@ -56,6 +61,12 @@ public class Cart {
 	}
 	public void setTotalCost(long totalCost) {
 		this.totalCost = totalCost;
+	}
+	public float getSale() {
+		return sale;
+	}
+	public void setSale(float sale) {
+		this.sale = sale;
 	}
 	
 	//Main method
